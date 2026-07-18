@@ -377,3 +377,151 @@ weighted avg       0.99      0.99      0.99        69
 2026-07-12 20:41:27 | INFO | ML | shell=powershell
 2026-07-12 20:41:27 | INFO | ML | cwd=.
 2026-07-12 20:41:27 | INFO | ML | github_actions=False
+2026-07-17 16:26:30 | INFO | M03 | === RUN START ===
+2026-07-17 16:26:30 | INFO | M03 | project=M03
+2026-07-17 16:26:30 | INFO | M03 | repo_dir=ml-03-classification
+2026-07-17 16:26:30 | INFO | M03 | python=3.14.2
+2026-07-17 16:26:30 | INFO | M03 | os=Windows 11
+2026-07-17 16:26:30 | INFO | M03 | shell=powershell
+2026-07-17 16:26:30 | INFO | M03 | cwd=notebooks
+2026-07-17 16:26:30 | INFO | M03 | github_actions=False
+2026-07-17 16:26:30 | INFO | M03 | Confirming installation:
+2026-07-17 16:26:30 | INFO | M03 |   python:       3.14.2
+2026-07-17 16:26:30 | INFO | M03 |   pandas:       3.0.3
+2026-07-17 16:26:30 | INFO | M03 |   numpy:        2.5.1
+2026-07-17 16:26:30 | INFO | M03 |   scikit-learn: 1.9.0
+2026-07-17 16:26:30 | INFO | M03 |   seaborn:      0.13.2
+2026-07-17 16:26:30 | INFO | M03 |   matplotlib:   3.11.0
+2026-07-17 16:26:30 | INFO | M03 | Loading dataset: penguins
+2026-07-17 16:26:30 | INFO | M03 | Loaded: 344 rows (instances), 7 columns
+2026-07-17 16:26:30 | INFO | M03 | Original rows: 344
+2026-07-17 16:26:30 | INFO | M03 | Model rows:    342
+2026-07-17 16:26:30 | INFO | M03 | Classes in target 'species': ['Adelie', 'Chinstrap', 'Gentoo']
+2026-07-17 16:26:30 | DEBUG | M03 | Class counts:
+species
+Adelie       151
+Gentoo       123
+Chinstrap     68
+Name: count, dtype: int64
+2026-07-17 16:26:30 | INFO | M03 | Train instances: 273
+2026-07-17 16:26:30 | INFO | M03 | Test instances: 69
+2026-07-17 16:26:30 | INFO | M03 | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-17 16:26:30 | INFO | M03 | Test accuracy: 0.986
+2026-07-17 16:26:30 | INFO | M03 | Per-class precision / recall / F1:
+2026-07-17 16:26:30 | DEBUG | M03 | 
+              precision    recall  f1-score   support
+
+      Adelie       0.97      1.00      0.98        30
+   Chinstrap       1.00      0.93      0.96        14
+      Gentoo       1.00      1.00      1.00        25
+
+    accuracy                           0.99        69
+   macro avg       0.99      0.98      0.98        69
+weighted avg       0.99      0.99      0.99        69
+
+2026-07-17 16:26:30 | INFO | M03 | Showing confusion matrix (rows = actual, cols = predicted)
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 1  train=0.791  test=0.797
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 2  train=0.960  test=0.986
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 3  train=0.967  test=0.986
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 4  train=0.989  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 5  train=0.996  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 6  train=0.996  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 7  train=1.000  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 8  train=1.000  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth= 9  train=1.000  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth=10  train=1.000  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth=11  train=1.000  test=1.000
+2026-07-17 16:26:31 | DEBUG | M03 |   depth=12  train=1.000  test=1.000
+2026-07-17 16:26:31 | INFO | M03 | ========================
+2026-07-17 16:26:31 | INFO | M03 | SUMMARY
+2026-07-17 16:26:31 | INFO | M03 | ========================
+2026-07-17 16:26:31 | INFO | M03 | Dataset:   penguins
+2026-07-17 16:26:31 | INFO | M03 | Target:    species  (classification)
+2026-07-17 16:26:31 | INFO | M03 | Features:  ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
+2026-07-17 16:26:31 | INFO | M03 | Model:     DecisionTreeClassifier(max_depth=3)
+2026-07-17 16:26:31 | INFO | M03 | ========================
+2026-07-17 18:37:41 | INFO | M03 | === RUN START ===
+2026-07-17 18:37:41 | INFO | M03 | project=M03
+2026-07-17 18:37:41 | INFO | M03 | repo_dir=ml-03-classification
+2026-07-17 18:37:41 | INFO | M03 | python=3.14.2
+2026-07-17 18:37:41 | INFO | M03 | os=Windows 11
+2026-07-17 18:37:41 | INFO | M03 | shell=powershell
+2026-07-17 18:37:41 | INFO | M03 | cwd=notebooks
+2026-07-17 18:37:41 | INFO | M03 | github_actions=False
+2026-07-17 18:37:41 | INFO | M03 | Confirming installation:
+2026-07-17 18:37:41 | INFO | M03 |   python:       3.14.2
+2026-07-17 18:37:41 | INFO | M03 |   pandas:       3.0.3
+2026-07-17 18:37:41 | INFO | M03 |   numpy:        2.5.1
+2026-07-17 18:37:41 | INFO | M03 |   scikit-learn: 1.9.0
+2026-07-17 18:37:41 | INFO | M03 |   seaborn:      0.13.2
+2026-07-17 18:37:41 | INFO | M03 |   matplotlib:   3.11.0
+2026-07-17 18:37:41 | INFO | M03 | Loading dataset: sex
+2026-07-17 18:41:35 | INFO | M03 | === RUN START ===
+2026-07-17 18:41:35 | INFO | M03 | project=M03
+2026-07-17 18:41:35 | INFO | M03 | repo_dir=ml-03-classification
+2026-07-17 18:41:35 | INFO | M03 | python=3.14.2
+2026-07-17 18:41:35 | INFO | M03 | os=Windows 11
+2026-07-17 18:41:35 | INFO | M03 | shell=powershell
+2026-07-17 18:41:35 | INFO | M03 | cwd=notebooks
+2026-07-17 18:41:35 | INFO | M03 | github_actions=False
+2026-07-17 18:41:35 | INFO | M03 | Confirming installation:
+2026-07-17 18:41:35 | INFO | M03 |   python:       3.14.2
+2026-07-17 18:41:35 | INFO | M03 |   pandas:       3.0.3
+2026-07-17 18:41:35 | INFO | M03 |   numpy:        2.5.1
+2026-07-17 18:41:35 | INFO | M03 |   scikit-learn: 1.9.0
+2026-07-17 18:41:35 | INFO | M03 |   seaborn:      0.13.2
+2026-07-17 18:41:35 | INFO | M03 |   matplotlib:   3.11.0
+2026-07-17 18:41:35 | INFO | M03 | Loading dataset: penguins
+2026-07-17 18:41:35 | INFO | M03 | Loaded: 344 rows (instances), 7 columns
+2026-07-17 18:41:35 | INFO | M03 | Original rows: 344
+2026-07-17 18:41:35 | INFO | M03 | Model rows:    333
+2026-07-17 18:41:35 | INFO | M03 | Classes in target 'sex': ['Female', 'Male']
+2026-07-17 18:41:35 | DEBUG | M03 | Class counts:
+sex
+Male      168
+Female    165
+Name: count, dtype: int64
+2026-07-17 18:41:35 | INFO | M03 | Train instances: 266
+2026-07-17 18:41:35 | INFO | M03 | Test instances: 67
+2026-07-17 18:41:35 | INFO | M03 | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-17 18:41:35 | INFO | M03 | Test accuracy: 0.836
+2026-07-17 18:41:35 | INFO | M03 | Per-class precision / recall / F1:
+2026-07-17 18:41:35 | DEBUG | M03 | 
+              precision    recall  f1-score   support
+
+      Female       0.92      0.73      0.81        33
+        Male       0.78      0.94      0.85        34
+
+    accuracy                           0.84        67
+   macro avg       0.85      0.83      0.83        67
+weighted avg       0.85      0.84      0.83        67
+
+2026-07-17 18:41:35 | INFO | M03 | Showing confusion matrix (rows = actual, cols = predicted)
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 1  train=0.726  test=0.716
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 2  train=0.891  test=0.821
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 3  train=0.940  test=0.836
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 4  train=0.951  test=0.851
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 5  train=0.966  test=0.851
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 6  train=0.977  test=0.851
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 7  train=0.981  test=0.836
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 8  train=0.996  test=0.821
+2026-07-17 18:41:36 | DEBUG | M03 |   depth= 9  train=0.996  test=0.821
+2026-07-17 18:41:36 | DEBUG | M03 |   depth=10  train=1.000  test=0.821
+2026-07-17 18:41:36 | DEBUG | M03 |   depth=11  train=1.000  test=0.821
+2026-07-17 18:41:36 | DEBUG | M03 |   depth=12  train=1.000  test=0.821
+2026-07-17 18:41:36 | INFO | M03 | ========================
+2026-07-17 18:41:36 | INFO | M03 | SUMMARY
+2026-07-17 18:41:36 | INFO | M03 | ========================
+2026-07-17 18:41:36 | INFO | M03 | Dataset:   penguins
+2026-07-17 18:41:36 | INFO | M03 | Target:    sex  (classification)
+2026-07-17 18:41:36 | INFO | M03 | Features:  ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
+2026-07-17 18:41:36 | INFO | M03 | Model:     DecisionTreeClassifier(max_depth=3)
+2026-07-17 18:41:36 | INFO | M03 | ========================
+2026-07-17 19:15:07 | INFO | ML | === RUN START ===
+2026-07-17 19:15:07 | INFO | ML | project=ML
+2026-07-17 19:15:07 | INFO | ML | repo_dir=ml-03-classification
+2026-07-17 19:15:07 | INFO | ML | python=3.14.2
+2026-07-17 19:15:07 | INFO | ML | os=Windows 11
+2026-07-17 19:15:07 | INFO | ML | shell=powershell
+2026-07-17 19:15:07 | INFO | ML | cwd=.
+2026-07-17 19:15:07 | INFO | ML | github_actions=False

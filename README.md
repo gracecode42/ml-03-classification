@@ -19,6 +19,8 @@ We learn to:
 
 ## Example Notebook + Your Notebook
 
+Phase 4 Modification: Changed "species" to "sex"
+
 Links:
 
 - [ml_03_case.ipynb](notebooks/ml_03_case.ipynb)
