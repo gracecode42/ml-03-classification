@@ -8,23 +8,22 @@
 
 ## Project Description
 
-This project focuses on how to build models that predict a category.
+This project trains a decision tree to classify students as pass or fail on the UCI Student Performance data (student-mat). The target is built from the final grade G3, with 10 or above on the 0 to 20 scale counting as a pass.
 
-We learn to:
+The question comes from my work as a learning center coordinator: can we predict which students are at risk in time to provide proactive support? The design turns on when the prediction is made, because that decides how much of the grade record exists yet. G1, G2, and G3 are three grading periods of one math course, so I built three prediction points, labeled fall, winter, and spring, and trained the same decision tree at each. The result is a comparison of how predictive power changes as more of the record becomes available.
 
-- train and evaluate a classifier (e.g., decision tree, logistic regression, k-NN)
-- read a confusion matrix and classification report
-- interpret accuracy, precision, recall, and F1
-- choose a model based on the problem and the data
+The work covers:
+
+- constructing a categorical target (pass/fail) from a continuous grade
+- stratified train/test splitting on an imbalanced target
+- training a decision tree and selecting max_depth from a train/test accuracy sweep
+- evaluating with confusion matrices and per-class precision, recall, and F1
+- selecting recall on the at-risk class as the decision metric, with justification
 
 ## Example Notebook + Your Notebook
 
-Phase 4 Modification: Changed "species" to "sex"
-
-Links:
-
-- [ml_03_case.ipynb](notebooks/ml_03_case.ipynb)
-- [ml_03_gracecode42.ipynb](notebooks/ml_03_gracecode42.ipynb)
+- [ml_03_case.ipynb](notebooks/ml_03_case.ipynb) — the course example (penguins)
+- [ml_03_gracecode42.ipynb](notebooks/ml_03_gracecode42.ipynb) — this project: student pass/fail across three prediction points
 
 ## Command Reference
 
@@ -88,11 +87,17 @@ git push -u origin main
 
 ## Findings and Visuals
 
-Update figures to present interesting results from your custom project:
+Predictive power grows as more of the grade record becomes available. The test set holds 79 students, 26 of whom fail. Fall, before any grades exist, does no better than guessing that everyone passes and catches only 4 of the 26. Winter, with the first period grade G1, catches 18. Spring, with G1 and G2, catches 25. Confusion matrices label actual on the rows and predicted on the columns.
 
-![Provide a Useful Caption](./docs/images/Figure_1.png)
+![Fall: with no grades available, the model catches 4 of 26 failing students.](./docs/images/confusion_fall_gracecode42.png)
 
-![Provide a Useful Caption](./docs/images/Figure_2.png)
+![Winter: with G1 available, the model catches 18 of 26 failing students.](./docs/images/confusion_winter_gracecode42.png)
+
+![Spring: with G1 and G2 available, the model catches 25 of 26 failing students.](./docs/images/confusion_spring_gracecode42.png)
+
+The depth sweep on the Winter model shows test accuracy near its best at max_depth 3, where the gap between train and test is smallest. Past that depth, train accuracy keeps rising while test does not, which is overfitting.
+
+![Winter depth sweep: test accuracy peaks near max_depth 3 while the train/test gap widens beyond it.](./docs/images/depth_sweep_winter_gracecode42.png)
 
 ## Project Documentation
 
