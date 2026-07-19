@@ -705,3 +705,216 @@ weighted avg       0.61      0.66      0.60        79
 2026-07-18 18:30:47 | INFO | ML | shell=powershell
 2026-07-18 18:30:47 | INFO | ML | cwd=.
 2026-07-18 18:30:47 | INFO | ML | github_actions=False
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | === RUN START ===
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | project=M03
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | repo_dir=ml-03-classification
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | python=3.14.2
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | os=Windows 11
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | shell=powershell
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | cwd=notebooks
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | github_actions=False
+2026-07-19 08:08:26 | INFO | M03-STUDENTS | Confirming installation:
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   python:       3.14.2
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   pandas:       3.0.3
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   numpy:        2.5.1
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   scikit-learn: 1.9.0
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   seaborn:      0.13.2
+2026-07-19 08:08:26 | INFO | M03-STUDENTS |   matplotlib:   3.11.0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Loading dataset: student-mat
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Loaded: 395 rows (instances), 33 columns
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Original rows: 395
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Model rows:    395
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Classes in target 'result': ['fail', 'pass']
+2026-07-19 08:08:50 | DEBUG | M03-STUDENTS | Class counts:
+result
+pass    265
+fail    130
+Name: count, dtype: int64
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Per-column completeness and type:
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   school       str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   sex          str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   age          int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   address      str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   famsize      str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Pstatus      str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Medu         int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Fedu         int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Mjob         str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Fjob         str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   reason       str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   guardian     str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   traveltime   int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   studytime    int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   failures     int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   schoolsup    str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   famsup       str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   paid         str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   activities   str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   nursery      str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   higher       str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   internet     str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   romantic     str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   famrel       int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   freetime     int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   goout        int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Dalc         int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   Walc         int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   health       int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   absences     int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   G1           int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   G2           int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   G3           int64    present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS |   result       str      present=100.0%  missing=0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | Numeric summary of the feature columns (spread and outliers):
+2026-07-19 08:08:50 | DEBUG | M03-STUDENTS | 
+             Medu        Fedu   studytime    failures    absences          G1          G2
+count  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000
+mean     2.749367    2.521519    2.035443    0.334177    5.708861   10.908861   10.713924
+std      1.094735    1.088201    0.839240    0.743651    8.003096    3.319195    3.761505
+min      0.000000    0.000000    1.000000    0.000000    0.000000    3.000000    0.000000
+25%      2.000000    2.000000    1.000000    0.000000    0.000000    8.000000    9.000000
+50%      3.000000    2.000000    2.000000    0.000000    4.000000   11.000000   11.000000
+75%      4.000000    3.000000    2.000000    0.000000    8.000000   13.000000   13.000000
+max      4.000000    4.000000    4.000000    3.000000   75.000000   19.000000   19.000000
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | absences: max=75, median=4.0
+2026-07-19 08:08:50 | INFO | M03-STUDENTS | absences over 20: 15 students
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Loading dataset: student-mat
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Loaded: 395 rows (instances), 33 columns
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Per-column completeness and type:
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   school       str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   sex          str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   age          int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   address      str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   famsize      str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Pstatus      str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Medu         int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Fedu         int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Mjob         str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Fjob         str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   reason       str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   guardian     str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   traveltime   int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   studytime    int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   failures     int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   schoolsup    str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   famsup       str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   paid         str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   activities   str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   nursery      str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   higher       str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   internet     str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   romantic     str      present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   famrel       int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   freetime     int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   goout        int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Dalc         int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   Walc         int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   health       int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   absences     int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   G1           int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   G2           int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS |   G3           int64    present=100.0%  missing=0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Numeric summary of the candidate feature columns (spread and outliers):
+2026-07-19 08:15:00 | DEBUG | M03-STUDENTS | 
+             Medu        Fedu   studytime    failures    absences          G1          G2
+count  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000
+mean     2.749367    2.521519    2.035443    0.334177    5.708861   10.908861   10.713924
+std      1.094735    1.088201    0.839240    0.743651    8.003096    3.319195    3.761505
+min      0.000000    0.000000    1.000000    0.000000    0.000000    3.000000    0.000000
+25%      2.000000    2.000000    1.000000    0.000000    0.000000    8.000000    9.000000
+50%      3.000000    2.000000    2.000000    0.000000    4.000000   11.000000   11.000000
+75%      4.000000    3.000000    2.000000    0.000000    8.000000   13.000000   13.000000
+max      4.000000    4.000000    4.000000    3.000000   75.000000   19.000000   19.000000
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | absences: max=75, median=4.0
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | absences over 20: 15 students
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Original rows: 395
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Model rows:    395
+2026-07-19 08:15:00 | INFO | M03-STUDENTS | Classes in target 'result': ['fail', 'pass']
+2026-07-19 08:15:00 | DEBUG | M03-STUDENTS | Class counts:
+result
+pass    265
+fail    130
+Name: count, dtype: int64
+2026-07-19 08:26:44 | INFO | M03-STUDENTS | Train instances: 316
+2026-07-19 08:26:44 | INFO | M03-STUDENTS | Test instances:  79
+2026-07-19 08:28:09 | INFO | M03-STUDENTS | Fitting one DecisionTreeClassifier(max_depth=3) per quarter
+2026-07-19 08:28:09 | INFO | M03-STUDENTS | Fit three trees: fall (no grades), winter (+G1), spring (+G1, G2)
+2026-07-19 10:20:11 | INFO | M03-STUDENTS | --- Fall --- accuracy = 0.658
+2026-07-19 10:20:11 | INFO | M03-STUDENTS | Per-class precision / recall / F1:
+2026-07-19 10:20:11 | DEBUG | M03-STUDENTS | 
+              precision    recall  f1-score   support
+
+        fail       0.44      0.15      0.23        26
+        pass       0.69      0.91      0.78        53
+
+    accuracy                           0.66        79
+   macro avg       0.57      0.53      0.50        79
+weighted avg       0.61      0.66      0.60        79
+
+2026-07-19 10:20:12 | INFO | M03-STUDENTS | --- Winter --- accuracy = 0.835
+2026-07-19 10:20:12 | INFO | M03-STUDENTS | Per-class precision / recall / F1:
+2026-07-19 10:20:12 | DEBUG | M03-STUDENTS | 
+              precision    recall  f1-score   support
+
+        fail       0.78      0.69      0.73        26
+        pass       0.86      0.91      0.88        53
+
+    accuracy                           0.84        79
+   macro avg       0.82      0.80      0.81        79
+weighted avg       0.83      0.84      0.83        79
+
+2026-07-19 10:20:12 | INFO | M03-STUDENTS | --- Spring --- accuracy = 0.873
+2026-07-19 10:20:12 | INFO | M03-STUDENTS | Per-class precision / recall / F1:
+2026-07-19 10:20:12 | DEBUG | M03-STUDENTS | 
+              precision    recall  f1-score   support
+
+        fail       0.74      0.96      0.83        26
+        pass       0.98      0.83      0.90        53
+
+    accuracy                           0.87        79
+   macro avg       0.86      0.90      0.87        79
+weighted avg       0.90      0.87      0.88        79
+
+2026-07-19 10:20:12 | INFO | M03-STUDENTS | Summary across quarters (fail = the at-risk class an alert is for):
+2026-07-19 10:20:12 | DEBUG | M03-STUDENTS | 
+quarter  accuracy  fail_recall  fail_precision  fail_f1  pass_recall  pass_precision  pass_f1
+   Fall     0.658         0.15            0.44     0.23         0.91            0.69     0.78
+ Winter     0.835         0.69            0.78     0.73         0.91            0.86     0.88
+ Spring     0.873         0.96            0.74     0.83         0.83            0.98     0.90
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 1  train=0.820  test=0.797
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 2  train=0.820  test=0.785
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 3  train=0.858  test=0.835
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 4  train=0.883  test=0.772
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 5  train=0.896  test=0.823
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 6  train=0.911  test=0.810
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 7  train=0.927  test=0.861
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 8  train=0.949  test=0.835
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth= 9  train=0.965  test=0.848
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth=10  train=0.975  test=0.848
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth=11  train=0.981  test=0.835
+2026-07-19 10:32:42 | DEBUG | M03-STUDENTS |   depth=12  train=0.981  test=0.835
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | ========================
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | SUMMARY
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | ========================
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | Dataset:  student-mat
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | Target:   result (classification, pass/fail from G3)
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | Model:    DecisionTreeClassifier(max_depth=3)
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | Prediction points (feature cases):
+2026-07-19 11:02:30 | INFO | M03-STUDENTS |   Fall   (no grades): ['Medu', 'Fedu', 'studytime', 'failures', 'absences']
+2026-07-19 11:02:30 | INFO | M03-STUDENTS |   Winter (+G1):       ['Medu', 'Fedu', 'studytime', 'failures', 'absences', 'G1']
+2026-07-19 11:02:30 | INFO | M03-STUDENTS |   Spring (+G1, G2):   ['Medu', 'Fedu', 'studytime', 'failures', 'absences', 'G1', 'G2']
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | Scores by quarter:
+2026-07-19 11:02:30 | DEBUG | M03-STUDENTS | 
+quarter  accuracy  fail_recall  fail_precision  fail_f1  pass_recall  pass_precision  pass_f1
+   Fall     0.658         0.15            0.44     0.23         0.91            0.69     0.78
+ Winter     0.835         0.69            0.78     0.73         0.91            0.86     0.88
+ Spring     0.873         0.96            0.74     0.83         0.83            0.98     0.90
+2026-07-19 11:02:30 | INFO | M03-STUDENTS | ========================
+2026-07-19 12:36:36 | INFO | ML | === RUN START ===
+2026-07-19 12:36:36 | INFO | ML | project=ML
+2026-07-19 12:36:36 | INFO | ML | repo_dir=ml-03-classification
+2026-07-19 12:36:36 | INFO | ML | python=3.14.2
+2026-07-19 12:36:36 | INFO | ML | os=Windows 11
+2026-07-19 12:36:36 | INFO | ML | shell=powershell
+2026-07-19 12:36:36 | INFO | ML | cwd=.
+2026-07-19 12:36:36 | INFO | ML | github_actions=False
