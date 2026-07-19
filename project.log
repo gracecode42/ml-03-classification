@@ -525,3 +525,183 @@ weighted avg       0.85      0.84      0.83        67
 2026-07-17 19:15:07 | INFO | ML | shell=powershell
 2026-07-17 19:15:07 | INFO | ML | cwd=.
 2026-07-17 19:15:07 | INFO | ML | github_actions=False
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | === RUN START ===
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | project=M03
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | repo_dir=ml-03-classification
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | python=3.14.2
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | os=Windows 11
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | shell=powershell
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | cwd=notebooks
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | github_actions=False
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Confirming installation:
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   python:       3.14.2
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   pandas:       3.0.3
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   numpy:        2.5.1
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   scikit-learn: 1.9.0
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   seaborn:      0.13.2
+2026-07-18 09:19:53 | INFO | M03-STUDENTS |   matplotlib:   3.11.0
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Loading dataset: penguins
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Loaded: 344 rows (instances), 7 columns
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Original rows: 344
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Model rows:    333
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Classes in target 'sex': ['Female', 'Male']
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS | Class counts:
+sex
+Male      168
+Female    165
+Name: count, dtype: int64
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Train instances: 266
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Test instances: 67
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Test accuracy: 0.836
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Per-class precision / recall / F1:
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS | 
+              precision    recall  f1-score   support
+
+      Female       0.92      0.73      0.81        33
+        Male       0.78      0.94      0.85        34
+
+    accuracy                           0.84        67
+   macro avg       0.85      0.83      0.83        67
+weighted avg       0.85      0.84      0.83        67
+
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Showing confusion matrix (rows = actual, cols = predicted)
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 1  train=0.726  test=0.716
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 2  train=0.891  test=0.821
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 3  train=0.940  test=0.836
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 4  train=0.951  test=0.851
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 5  train=0.966  test=0.851
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 6  train=0.977  test=0.851
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 7  train=0.981  test=0.836
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 8  train=0.996  test=0.821
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth= 9  train=0.996  test=0.821
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth=10  train=1.000  test=0.821
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth=11  train=1.000  test=0.821
+2026-07-18 09:19:53 | DEBUG | M03-STUDENTS |   depth=12  train=1.000  test=0.821
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | ========================
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | SUMMARY
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | ========================
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Dataset:   penguins
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Target:    sex  (classification)
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Features:  ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | Model:     DecisionTreeClassifier(max_depth=3)
+2026-07-18 09:19:53 | INFO | M03-STUDENTS | ========================
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | === RUN START ===
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | project=M03
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | repo_dir=ml-03-classification
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | python=3.14.2
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | os=Windows 11
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | shell=powershell
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | cwd=notebooks
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | github_actions=False
+2026-07-18 16:45:50 | INFO | M03-STUDENTS | Confirming installation:
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   python:       3.14.2
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   pandas:       3.0.3
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   numpy:        2.5.1
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   scikit-learn: 1.9.0
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   seaborn:      0.13.2
+2026-07-18 16:45:50 | INFO | M03-STUDENTS |   matplotlib:   3.11.0
+2026-07-18 17:19:53 | INFO | M03-STUDENTS | Loading dataset: student-mat
+2026-07-18 17:19:53 | INFO | M03-STUDENTS | Loaded: 395 rows (instances), 33 columns
+2026-07-18 17:19:53 | INFO | M03-STUDENTS | Original rows: 395
+2026-07-18 17:19:53 | INFO | M03-STUDENTS | Model rows:    395
+2026-07-18 17:19:53 | INFO | M03-STUDENTS | Classes in target 'result': ['fail', 'pass']
+2026-07-18 17:19:53 | DEBUG | M03-STUDENTS | Class counts:
+result
+pass    265
+fail    130
+Name: count, dtype: int64
+2026-07-18 17:24:08 | INFO | M03-STUDENTS | Train instances: 316
+2026-07-18 17:24:08 | INFO | M03-STUDENTS | Test instances: 79
+2026-07-18 17:33:34 | INFO | M03-STUDENTS | Per-column completeness and type:
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   school       str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   sex          str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   age          int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   address      str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   famsize      str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Pstatus      str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Medu         int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Fedu         int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Mjob         str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Fjob         str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   reason       str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   guardian     str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   traveltime   int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   studytime    int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   failures     int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   schoolsup    str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   famsup       str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   paid         str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   activities   str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   nursery      str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   higher       str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   internet     str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   romantic     str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   famrel       int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   freetime     int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   goout        int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Dalc         int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   Walc         int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   health       int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   absences     int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   G1           int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   G2           int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   G3           int64    present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS |   result       str      present=100.0%  missing=0
+2026-07-18 17:33:34 | INFO | M03-STUDENTS | Numeric summary of the feature columns (spread and outliers):
+2026-07-18 17:33:34 | DEBUG | M03-STUDENTS | 
+              age        Medu        Fedu  traveltime   studytime    failures      famrel    freetime       goout  \
+count  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000  395.000000   
+mean    16.696203    2.749367    2.521519    1.448101    2.035443    0.334177    3.944304    3.235443    3.108861   
+std      1.276043    1.094735    1.088201    0.697505    0.839240    0.743651    0.896659    0.998862    1.113278   
+min     15.000000    0.000000    0.000000    1.000000    1.000000    0.000000    1.000000    1.000000    1.000000   
+25%     16.000000    2.000000    2.000000    1.000000    1.000000    0.000000    4.000000    3.000000    2.000000   
+50%     17.000000    3.000000    2.000000    1.000000    2.000000    0.000000    4.000000    3.000000    3.000000   
+75%     18.000000    4.000000    3.000000    2.000000    2.000000    0.000000    5.000000    4.000000    4.000000   
+max     22.000000    4.000000    4.000000    4.000000    4.000000    3.000000    5.000000    5.000000    5.000000   
+
+             Dalc        Walc      health    absences  
+count  395.000000  395.000000  395.000000  395.000000  
+mean     1.481013    2.291139    3.554430    5.708861  
+std      0.890741    1.287897    1.390303    8.003096  
+min      1.000000    1.000000    1.000000    0.000000  
+25%      1.000000    1.000000    3.000000    0.000000  
+50%      1.000000    2.000000    4.000000    4.000000  
+75%      2.000000    3.000000    5.000000    8.000000  
+max      5.000000    5.000000    5.000000   75.000000  
+2026-07-18 17:33:35 | INFO | M03-STUDENTS | absences: max=75, median=4.0
+2026-07-18 17:33:35 | INFO | M03-STUDENTS | absences over 20: 15 students
+2026-07-18 17:41:46 | INFO | M03-STUDENTS | Fitting DecisionTreeClassifier(max_depth=3)
+2026-07-18 17:42:47 | INFO | M03-STUDENTS | Test accuracy: 0.658
+2026-07-18 17:42:47 | INFO | M03-STUDENTS | Per-class precision / recall / F1:
+2026-07-18 17:42:47 | DEBUG | M03-STUDENTS | 
+              precision    recall  f1-score   support
+
+        fail       0.44      0.15      0.23        26
+        pass       0.69      0.91      0.78        53
+
+    accuracy                           0.66        79
+   macro avg       0.57      0.53      0.50        79
+weighted avg       0.61      0.66      0.60        79
+
+2026-07-18 17:42:47 | INFO | M03-STUDENTS | Showing confusion matrix (rows = actual, cols = predicted)
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 1  train=0.737  test=0.671
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 2  train=0.750  test=0.658
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 3  train=0.769  test=0.658
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 4  train=0.797  test=0.646
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 5  train=0.826  test=0.646
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 6  train=0.845  test=0.582
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 7  train=0.880  test=0.582
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 8  train=0.908  test=0.620
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth= 9  train=0.934  test=0.595
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth=10  train=0.949  test=0.595
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth=11  train=0.978  test=0.532
+2026-07-18 17:43:57 | DEBUG | M03-STUDENTS |   depth=12  train=0.987  test=0.582
+2026-07-18 18:30:47 | INFO | ML | === RUN START ===
+2026-07-18 18:30:47 | INFO | ML | project=ML
+2026-07-18 18:30:47 | INFO | ML | repo_dir=ml-03-classification
+2026-07-18 18:30:47 | INFO | ML | python=3.14.2
+2026-07-18 18:30:47 | INFO | ML | os=Windows 11
+2026-07-18 18:30:47 | INFO | ML | shell=powershell
+2026-07-18 18:30:47 | INFO | ML | cwd=.
+2026-07-18 18:30:47 | INFO | ML | github_actions=False
