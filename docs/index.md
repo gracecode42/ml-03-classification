@@ -21,85 +21,66 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+For the technical modification, I changed the target in the example notebook from species to sex, keeping the same four numeric features. I chose it because it was small and safe, a one-line change to a working project that let me see how the same model behaves on a harder target. I verified it by rerunning the notebook and reading the new output.
 
-Include:
-
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
-
-Compared with the example project,
-explain what is different and why the change matters.
-
-Was it easy, or surprisingly challenging and why do you think so?
+The result confirmed the change. Test accuracy dropped from about 0.99 to 0.836, and the per-class scores, near perfect for the three species, came out uneven: recall was 0.94 for males but 0.73 for females, and the confusion matrix showed 9 females misclassified as male against only 2 males misclassified as female. Compared with the example, which separates three penguin species almost perfectly, predicting sex from the same measurements is a harder problem, and that is what makes the change worth noting: the model and features are unchanged, so the drop comes entirely from the target. It was an easy change to make, since it only meant pointing the target at a different column, but a useful one to see, because it showed how much a model's performance depends on the target itself.
 
 ## Phase 5. Custom Project
 
-Describe your custom project and how you made your modeling decisions.
-
-Be specific about what changed from the example project.
+I kept the example's classification workflow and changed the problem to predicting whether a student passes or fails, evaluated at three points in a school year. The sections below cover the data, the modeling approach, the target, the features, the results, and a summary.
 
 ### Basis and Data
 
-Describe the dataset, input, or example you started with.
+The example project classifies a penguin's species from four body measurements. I kept that workflow and changed the dataset to the UCI Student Performance data (student-mat): 395 students in a secondary school mathematics course at two Portuguese schools, with 33 columns covering demographics, family background, social life, school support, and grades. It was collected from school reports and questionnaires by Cortez and Silva (2008).
 
-Include:
+Data source: Cortez, P. (2014). Student Performance [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5TG7T (CC BY 4.0).
 
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+I chose this dataset because it carries a question from my work as a learning center coordinator: can we predict which students are at risk in time to provide proactive support? It also continues the dataset from my prior features project, so the reasoning I developed there about which grades exist at prediction time carries into a classification task.
+
+Two points bound the work. The data is from two Portuguese secondary schools in 2008, so the specific results do not transfer to another school or population; the value is in exercising the method on a real question. And G1, G2, and G3 are three grading periods of one math course across a single school year, not three separate courses. That detail shapes the whole project, because how much of the grade record exists at the moment of prediction is exactly what changes across the three prediction points I evaluate.
 
 ### Modeling Approach
 
-Describe the problem type and modeling approach for this project.
+This is a supervised classification problem. It is supervised because each student carries a known pass or fail outcome the model trains on, and it is classification because that outcome is a category rather than a number, which would have called for regression. The target is binary, which keeps the confusion matrix and the per-class scores straightforward to read.
 
-Include:
-
-- Is this supervised or unsupervised and how do you know
-- Is this classification, regression, clustering, recommendation, forecasting, or another type of ML task
-- What kind of target works well for this approach
-- Why your selected model or method is appropriate
+I used a decision tree. It takes the numeric features as they are, without scaling or any assumption about how they are distributed, and its splits can be read and explained, which suits a model meant to support a decision rather than sit behind one. Its complexity is set by a single parameter, max_depth, which I chose by sweeping a range of values and selecting the depth where test accuracy held up without the gap between training and test accuracy widening.
 
 ### Target
 
-Describe the example target variable.
+The example predicts a penguin's species, one of three classes.
 
-Then describe your chosen target variable.
+My target is pass or fail, built from the final grade G3. On the Portuguese 0 to 20 scale, 10 is the pass mark, so a final grade of 10 or above is a pass and below 10 is a fail. This turns a continuous grade into a binary category.
 
-Explain how your target choice changes the modeling approach, interpretation, or evaluation.
+Moving from three classes to two does not change how evaluation works. Precision, recall, and F1 are still reported per class, as they are for the example's three species, and the confusion matrix is simply 2 by 2. What changes is the focus: one class, fail, is the outcome an alert exists to catch, so recall on that class is the primary measure of whether the model does its job.
 
 ### Features
 
-Describe the example features.
+The example uses four numeric measurements: bill length, bill depth, flipper length, and body mass.
 
-Then describe the features you used to predict your target.
+I used five: mother's education, father's education, study time, past class failures, and absences. Four describe a student's background and habits; past failures is the one prior-performance signal among them. The set was kept small on purpose. Tested against all thirteen numeric columns, these five performed as well or better, so the rest added no signal worth their complexity.
 
-Explain what you changed, added, removed, or kept and why.
+The central decision concerned the grades. G1 and G2 are the first and second period grades of the course, and G3 is the final grade the target is built from. Rather than fix one feature set, I built three, one per prediction point: fall uses the five base features alone, winter adds G1, and spring adds G1 and G2. Each grade exists only after its period closes, so the three sets represent how much of the record is available at three moments when a prediction might be made. I left the categorical columns out of all three to keep this first pass to features the tree accepts without encoding.
 
 ### Evaluation and Results
 
-Describe how you evaluated your model.
+Each of the three models was scored on the same held-out test set of 79 students, 26 of whom fail. The measures are accuracy and per-class precision, recall, and F1, with a confusion matrix for each model in the notebook. Recall on the fail class is the primary measure, since failing students are the outcome an alert exists to catch. Accuracy on its own is misleading here: about two thirds of students pass, so a model that predicts pass for everyone reaches 0.67 while identifying no failing students at all.
 
-Include:
+| Prediction point | Accuracy | Fail precision | Fail recall | Fail F1 | Pass precision | Pass recall | Pass F1 |
+|---|---|---|---|---|---|---|---|
+| Fall (no grades) | 0.658 | 0.44 | 0.15 | 0.23 | 0.69 | 0.91 | 0.78 |
+| Winter (+G1) | 0.835 | 0.78 | 0.69 | 0.73 | 0.86 | 0.91 | 0.88 |
+| Spring (+G1, G2) | 0.873 | 0.74 | 0.96 | 0.83 | 0.98 | 0.83 | 0.90 |
 
-- The metric or evidence you used
-- The main result
-- Whether the result was useful, interesting, surprising, or disappointing
-- Any weakness, limitation, or next improvement
+Fail recall rises as more of the grade record becomes available. In fall, with no grades, it is 0.15: the model identifies 4 of the 26 failing students, no better than the majority-class baseline of predicting that everyone passes. In winter, with the first period grade, it rises to 0.69, identifying 18 of 26. In spring, with two periods, it reaches 0.96, identifying 25 of 26. Pass recall stays high across all three points, so the improvement comes almost entirely from the model's growing ability to identify students who fail.
+
+The clearest limitation is the source data, which comes from two Portuguese secondary schools in 2008 and does not transfer to another setting. What the project demonstrates is the method and the reasoning, not results to be applied directly.
 
 ### Summary
 
-Summarize your custom project.
+I trained a decision tree to predict whether a student passes or fails, with the target built from the final grade. Because the three grades in the data are three periods of one course, I trained the model at three points in the year: before any grades, after the first period, and after the second. The model was the same each time. The only thing that changed was how much of the grade record existed when the prediction was made.
 
-Include:
+That single change drives the result. Before any grades, the model identifies 4 of the 26 failing students; after one period, 18; after two, 25. This makes concrete an argument I developed in my prior project, that a feature is only worth using if it exists at the moment the prediction is needed, which is a separate question from whether it gives away the answer. Here that argument is carried by measurement rather than reasoning alone.
 
-- How you implemented your custom model
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
+The result also holds a genuine tension. The earliest alert is the one that would help students most, since a student caught early has the most room to recover, but before any grades post the remaining features carry too little signal to beat simply guessing that everyone passes, so that alert has no real value. Usable prediction begins once the first grades are in and strengthens after the second, which means the models that work are also the later, less timely ones. Winter and spring are the models a support team could act on, each trading accuracy against how early it arrives, while fall marks the boundary of what is possible: the wish to intervene early does not by itself make an early prediction reliable.
 
-Display at least one image or screenshot showing your work.
+The project drew on the classification methods from this module: constructing a categorical target, splitting with stratification, training and tuning a decision tree, and evaluating with a confusion matrix and per-class metrics. The same structure fits other early-warning problems, where a small at-risk group must be identified in time to act and the information available depends on when the decision is made. The lesson I take from it is that knowing when a reliable prediction is even possible is part of the problem, not a detail to settle afterward.
